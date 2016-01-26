@@ -21,3 +21,7 @@ version 0.15.1.
 4. run "grunt serve" for application preview
    OR
    run "grunt serve:dist" for application distribution package creation.
+
+## assignment is hosted at http://myfuncode.com/crossover/
+
+Note: If you get any error while running "npm install", try "sudo npm install" or on windows machine with administrative priviledges.
