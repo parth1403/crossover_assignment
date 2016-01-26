@@ -1,0 +1,463 @@
+
+$running-color: #4C85B7;
+$pending-color: #CACBCD;
+$rejected-color: #BE0712;
+$complete-color: #5D933A;
+$accepted-color: #5D933A;
+
+.grid{
+  background: #F5F8FB;
+  border: none;
+  padding: 10px;
+  height: 600px;
+
+  .ui-grid-top-panel{
+    background: none;
+  }
+  .ui-grid-header{
+    border: none;
+  }
+  .ui-grid-header-cell{
+    border: none;
+    background: none;
+  }
+  .ui-grid-header-cell-label{
+    font-weight: normal;
+    font-size: 18px;
+    color: #1A1D2E;
+  }
+
+  .ui-grid-canvas .ui-grid-row{
+    .ui-grid-cell{
+      margin: 5px 0;
+      border-right: none;
+      background: none;
+    }
+
+    .ui-grid-cell.row-expanded{
+      border-bottom: none;
+      margin-bottom: 0px;
+    }
+  }
+  .ui-grid-row{
+
+    .ui-grid-cell.req-name-cell, .ui-grid-cell.time-started-cell{
+      font-size: 16px;
+    }
+    .ui-grid-cell.state-cell{
+      font-size: 18px;
+    }
+
+    .ui-grid-cell.pending{
+      border-top: 2px solid $pending-color;
+      border-bottom: 2px solid $pending-color;
+      color: $pending-color;
+
+      .build-type-icon.build{
+        background-image: url("../images/comp-grey-small.png");
+      }
+    }
+    .ui-grid-cell.pending:first-child{
+      border-left: 2px solid $pending-color;
+    }
+    .ui-grid-cell.pending:last-child{
+      border-right: 2px solid $pending-color;
+    }
+
+    .ui-grid-cell.running{
+      border-top: 2px solid $running-color;
+      border-bottom: 2px solid $running-color;
+      color: $running-color;
+
+      .build-type-icon.firewall{
+        background-image: url("../images/brick-blue.png");
+      }
+    }
+    .ui-grid-cell.running:first-child{
+      border-left: 2px solid $running-color;
+    }
+    .ui-grid-cell.running:last-child{
+      border-right: 2px solid $running-color;
+    }
+
+    .ui-grid-cell.rejected{
+      border-top: 2px solid $rejected-color;
+      border-bottom: 2px solid $rejected-color;
+      color: $rejected-color;
+
+      .build-type-icon.firewall{
+        background-image: url("../images/brick-red.png");
+      }
+    }
+    .ui-grid-cell.rejected:first-child{
+      border-left: 2px solid $rejected-color;
+    }
+    .ui-grid-cell.rejected:last-child{
+      border-right: 2px solid $rejected-color;
+    }
+
+    .ui-grid-cell.complete{
+      border-top: 2px solid $complete-color;
+      border-bottom: 2px solid $complete-color;
+      color: $complete-color;
+
+      .build-type-icon.build{
+        background-image: url("../images/comp-green-small.png");
+      }
+    }
+    .ui-grid-cell.complete:first-child{
+      border-left: 2px solid $complete-color;
+    }
+    .ui-grid-cell.complete:last-child{
+      border-right: 2px solid $complete-color;
+    }
+
+    .ui-grid-cell.accepted{
+      border-top: 2px solid $accepted-color;
+      border-bottom: 2px solid $accepted-color;
+      color: $accepted-color;
+
+      .build-type-icon.firewall{
+        background-image: url("../images/brick-green.png");
+      }
+    }
+    .ui-grid-cell.accepted:first-child{
+      border-left: 2px solid $accepted-color;
+    }
+    .ui-grid-cell.accepted:last-child{
+      border-right: 2px solid $accepted-color;
+    }
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.pending{
+    border-bottom: 2px solid $pending-color;
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.running{
+    border-bottom: 2px solid $running-color;
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.rejected{
+    border-bottom: 2px solid $rejected-color;
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.complete{
+    border-bottom: 2px solid $complete-color;
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.accepted{
+    border-bottom: 2px solid $accepted-color;
+  }
+  .ui-grid-canvas .ui-grid-row:last-child .ui-grid-cell.row-expanded{
+    border-bottom: none;
+  }
+  .ui-grid-canvas .ui-grid-row .expandableRow{
+    border-top: none;
+    margin-top: 0px;
+  }
+  .expandableRow.pending{
+    border: 2px solid $pending-color;
+  }
+  .expandableRow.running{
+    border: 2px solid $running-color;
+  }
+  .expandableRow.rejected{
+    border: 2px solid $rejected-color;
+  }
+  .expandableRow.complete{
+    border: 2px solid $complete-color;
+  }
+  .expandableRow.accepted{
+    border: 2px solid $accepted-color;
+  }
+
+  .ui-grid-row.row-expanded .ui-grid-cell-contents .status-block{
+    display: none;
+  }
+
+  .ui-grid-cell-contents{
+    text-align: center;
+    line-height: 30px;
+
+    .build-type-icon{
+      width: 30px;
+      height: 30px;
+      float: left;
+    }
+    .build-type-icon.build{
+      background-image: url("../images/comp-green-small.png");
+    }
+    .build-type-icon.firewall{
+      background-image: url("../images/brick-green.png");
+    }
+    .build-type-label{
+      padding-left: 10px;
+    }
+    .status-block{
+      display: inline-block;
+      width: 50px;
+      height: 30px;
+      border: 2px solid #C5C5C5;
+    }
+    .status-block .progress-bar{
+      height: 100%;
+      box-shadow: none;
+    }
+    .status-block.pending{
+      .progress-bar{
+        display: none
+      }
+    }
+    .status-block.running{
+      .progress-bar{
+        background-color: #5E9CD3;
+      }
+    }
+    .status-block.succeed{
+      .progress-bar{
+        width: 100%;
+        background-color: #548039;
+      }
+    }
+    .status-block.failed{
+      .progress-bar{
+        width: 100%;
+        background-color: #BE0712;
+      }
+    }
+  }
+  .row-details{
+    padding: 15px;
+  }
+  .detail-row-box.rejected{
+    border: 2px solid $rejected-color;
+  }
+  .detail-row-box{
+    width: 200px;
+    height: 190px;
+    float: left;
+    border: 2px solid green;
+    margin: 0 10px 0 5px;
+
+    .box-label{
+      text-align: left;
+      font-size: 18px;
+      color: green;
+      padding-left: 15px;
+      padding-top: 5px;
+    }
+
+    .pie-chart-box{
+      width: 100px;
+      height: 110px;
+      float: left;
+
+      nvd3.ng-isolate-scope{
+        position: relative;
+        top: -35px;
+        left: -25px;
+      }
+    }
+
+    .test-pass-wrapper{
+      float: left;
+      width: 96px;
+      padding-top: 30px;
+      text-align: center;
+
+      .test-pass-percentage{
+        font-size: 36px;
+        line-height: 36px;
+      }
+      .test-pass-label{
+        font-size: 11px;
+      }
+    }
+    &.ut-box .test-pass-percentage{
+      color: #C2D468;
+    }
+    &.ft-box .test-pass-percentage{
+      color: #BB8A14;
+    }
+
+    .progressbar-wrapper{
+      position: relative;
+      margin: 0 15px;
+      height: 35px;
+
+      .progress-indicator-wrapper{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+      }
+      .progress-indicator{
+        color: #54632C;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .progress-indicator-label{
+        color: #54632C;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .progressbar{
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        background-color: #C6DFB5;
+      }
+      .progress-status{
+        background-color: #F6CBAE;
+        height: 100%;
+      }
+    }
+
+    .metrics-arrow-wrapper{
+      float: left;
+      width: 96px;
+    }
+
+    .metrics-arrow-label{
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 16px;
+    }
+
+    .metrics-arrow{
+      width: 70px;
+      height: 60px;
+      margin-left: 13px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    .metrics-arrow.up{
+      background-image: url("../images/arrow_right_g.svg");
+      text-align: center;
+      line-height: 73px;
+      color: white;
+      font-size: 18px;
+    }
+    .metrics-arrow.down{
+      background-image: url("../images/arrow_down_r.svg");
+      text-align: center;
+      line-height: 73px;
+      color: white;
+      font-size: 18px;
+    }
+    .metrics-arrow.right{
+      background-image: url("../images/arrow_up_y.svg");
+      line-height: 70px;
+      font-size: 18px;
+      padding-left: 20px;
+    }
+
+    .build-img-wrapper{
+      margin-top: 20px;
+
+      .img-wrapper{
+        float: left;
+        width: 96px;
+        padding-left: 13px;
+      }
+      .img-label{
+        text-align: center;
+        font-size: 16px;
+        /* font-weight: bold; */
+        color: #5E9CD3;
+      }
+    }
+    .debug-img{
+      height: 70px;
+      width: 70px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../images/comp-blue-big.png");
+    }
+    .release-img{
+      height: 70px;
+      width: 70px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../images/comp-blue-big.png");
+    }
+    .debug-time-label{
+      text-align: center;
+      padding-top: 10px;
+      font-size: 15px;
+    }
+
+  }
+
+
+  .detail-result-section{
+    float: left;
+    width: 200px;
+  }
+
+  .build-result.pending{
+    color: #858B8F;
+    .result-title{
+      font-size: 36px;
+    }
+  }
+  .build-result.running{
+    color: #76A4CF;
+    .result-title{
+      font-size: 36px;
+    }
+  }
+  .build-result.rejected{
+    color: #BE0712;
+  }
+  .build-result.complete{
+    color: #2C4A18;
+
+    .result-title{
+      font-size: 36px;
+    }
+  }
+  .build-result.accepted{
+    color: #FCBB1E;
+  }
+  .build-result{
+    padding-top: 5px;
+    .result-label{
+      color: black;
+      text-align: center;
+      font-size: 16px;
+    }
+    .result-title{
+      text-align: center;
+      font-size: 16px;
+    }
+    .result-status{
+      text-align: center;
+      font-size: 36px;
+      line-height: 40px;
+    }
+    .result-cta{
+      text-align: center;
+    }
+    .result-cta button{
+      box-shadow: none;
+      border: none;
+      background-color: #5E9CD3;
+      color: white;
+      height: 30px;
+      padding: 0 30px;
+    }
+    .result-cta select{
+      color: #5E9CD3;
+      border: 2px solid #5E9CD3;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .result-cta.ctatype-2 button{
+
+    }
+  }
+
+}

@@ -1,0 +1,108 @@
+<div class="row-details">
+            <div class="detail-row-box metrics-box" ng-click="$emit('metrics_box_clicked')" ng-class="[row.entity.details_data.metrics.status]">
+              <div class="box-label">Metrics</div>
+              <div>
+                <div class="metrics-arrow-wrapper test-metrics">
+                  <div class="metrics-arrow up">
+                    {{row.entity.details_data.metrics.test_count}}
+                  </div>
+                  <div class="metrics-arrow-label">
+                    Test
+                  </div>
+                </div>
+                <div class="metrics-arrow-wrapper maintainability-metrics">
+                  <div class="metrics-arrow" ng-class="{'up' : row.entity.details_data.metrics.maintainability_count >= 0, 'down' : row.entity.details_data.metrics.maintainability_count < 0}">
+                    {{row.entity.details_data.metrics.maintainability_count | abs}}
+                  </div>
+                  <div class="metrics-arrow-label">
+                    Maintainability
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="metrics-arrow-wrapper security-metrics">
+                  <div class="metrics-arrow right">
+                    {{row.entity.details_data.metrics.security_count}}
+                  </div>
+                  <div class="metrics-arrow-label">
+                    Security
+                  </div>
+                </div>
+                <div class="metrics-arrow-wrapper workmanship-metrics">
+                  <div class="metrics-arrow right">
+                    {{row.entity.details_data.metrics.workmanship_count}}
+                  </div>
+                  <div class="metrics-arrow-label">
+                    Workmanship
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-row-box build-box" ng-click="$emit('build_box_clicked')" ng-class="[row.entity.details_data.build.status]">
+              <div class="box-label">Build</div>
+              <div class="build-img-wrapper">
+                  <div class="img-wrapper">
+                    <div class="debug-img">
+                    </div>
+                    <div class="img-label">Debug</div>
+                  </div>
+                  <div class="img-wrapper">
+                    <div class="release-img">
+                    </div>
+                    <div class="img-label">Release</div>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+              <div class="debug-time-label">{{row.entity.details_data.build.start_time | date:'HH:mma - MM/dd/yyyy'}}</div>
+            </div>
+            <div class="detail-row-box ut-box" ng-click="$emit('ut_box_clicked')" ng-class="[row.entity.details_data.unit_test.status]">
+              <div class="box-label">Unit Test</div>
+              <div class="chart-mdwrapper">
+                <div class="pie-chart-box" ng-controller="PieChartCtrl" ng-init="init(row.entity, 'unit_test')">
+                    <nvd3 options="options" data="data"></nvd3>
+                </div>
+                <div class="test-pass-wrapper">
+                  <div class="test-pass-percentage">{{row.entity.details_data.unit_test.test_passed}}%</div>
+                  <div class="test-pass-label">test passed</div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="progressbar-wrapper">
+                <div class="progressbar">
+                  <div class="progress-status" ng-attr-style="width: {{row.entity.details_data.unit_test.code_covered}}%">
+                  </div>
+                </div>
+                <div class="progress-indicator-wrapper">
+                  <div class="progress-indicator">{{row.entity.details_data.unit_test.code_covered}}%</div>
+                  <div class="progress-indicator-label">code covered</div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-row-box ft-box" ng-click="$emit('ft_box_clicked')" ng-class="[row.entity.details_data.functional_test.status]">
+              <div class="box-label">Functional Test</div>
+              <div class="chart-wrapper">
+                <div class="pie-chart-box" ng-controller="PieChartCtrl" ng-init="init(row.entity, 'functional_test')">
+                    <nvd3 options="options" data="data"></nvd3>
+                </div>
+                <div class="test-pass-wrapper">
+                  <div class="test-pass-percentage">{{row.entity.details_data.functional_test.test_passed}}%</div>
+                  <div class="test-pass-label">test passed</div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="progressbar-wrapper">
+                <div class="progressbar">
+                  <div class="progress-status" ng-attr-style="width:{{row.entity.details_data.functional_test.code_covered}}%">
+                  </div>
+                </div>
+                <div class="progress-indicator-wrapper">
+                  <div class="progress-indicator">{{row.entity.details_data.functional_test.code_covered}}%</div>
+                  <div class="progress-indicator-label">code covered</div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-result-section">
+              <build-result-section data="{{row.entity}}"></build-result-section>
+            </div>
+            <div class="clearfix"></div>
+          </div>

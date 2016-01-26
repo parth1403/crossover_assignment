@@ -1,0 +1,24 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+*{
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+body {
+  padding: 0;
+}
+.clearfix{
+  clear: both;
+}
+.padding-lr-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
