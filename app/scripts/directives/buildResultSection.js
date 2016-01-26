@@ -1,4 +1,6 @@
 angular.module('angularApp').directive('buildResultSection', function() {
+  'use strict';
+
    //define the directive object
    var directive = {};
 
@@ -11,7 +13,7 @@ angular.module('angularApp').directive('buildResultSection', function() {
    //scope is used to distinguish each student element based on criteria.
    directive.scope = {
       data : "@"
-   }
+   };
 
    //compile is called during application initialization. AngularJS calls it once when html page is loaded.
 
@@ -22,9 +24,9 @@ angular.module('angularApp').directive('buildResultSection', function() {
             resultStatus    = data.result && data.result.status,
             resultCTAType   = data.result && data.result.cta_type,
             reqStatusId     = data.state_id,
-            reqType         = data.req_type
-            resultTitle     = data.stateName
-            stateType       = data.stateInfo.type
+            reqType         = data.req_type,
+            resultTitle     = data.stateName,
+            stateType       = data.stateInfo.type,
             resultStatusHtml = "", resultCTAHtml = ""
           ;
 
@@ -72,8 +74,8 @@ angular.module('angularApp').directive('buildResultSection', function() {
 
           element.append(mainEl);
          // element.css("background-color", "#ff00ff");
-      }
+      };
       return linkFunction;
-   }
+   };
    return directive;
 });

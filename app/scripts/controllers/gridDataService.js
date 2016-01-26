@@ -1,16 +1,18 @@
 angular.module('angularApp')
 .factory('GridDataService', ['$http', '$q', function( $http, $q ) {
 
-    var GRID_SERVICE_URL = '/data/grid_data.json';
-    var STATE_INFO_SERVICE_URL = '/data/state_info.json';
-    var OWNER_INFO_SERVICE_URL = '/data/owner_info.json';
+    'use strict';
+
+    var GRID_SERVICE_URL = 'data/grid_data.json';
+    var STATE_INFO_SERVICE_URL = 'data/state_info.json';
+    var OWNER_INFO_SERVICE_URL = 'data/owner_info.json';
 
     var fetchOwnerInfo = function fetchOwnerInfo(){
         return $http.get(OWNER_INFO_SERVICE_URL);
-    }
+    };
     var fetchStateInfo = function fetchStateInfo(){
         return $http.get(STATE_INFO_SERVICE_URL);
-    }
+    };
 
     var metadata = {};
 
@@ -30,15 +32,15 @@ angular.module('angularApp')
     }
 
     function makeGridData( data, facet ){
-        var gridData = {},
-            data = data.details_data[facet];
-        switch( data.status ){
+        var gridData  = {},
+            facetData = data.details_data[facet];
+        switch( facetData.status ){
           case "pending":
             gridData.class = "pending";
             break;
           case "running":
             gridData.class = "running";
-            gridData.progress = data.progress;
+            gridData.progress = facetData.progress;
             break;
           case "failed":
           case "rejected":
@@ -56,12 +58,10 @@ angular.module('angularApp')
 
     var fetchGridData = function(){
         return $http.get(GRID_SERVICE_URL);
-    }
+    };
     var processGridData = function( gridData ){
-
-
         var data = gridData.data;
-        for(i = 0; i < data.length; i++){
+        for(var i = 0; i < data.length; i++){
             data[i].metrics = makeGridData(data[i], "metrics");
             data[i].build = makeGridData(data[i], "build");
             data[i].ft = makeGridData(data[i], "functional_test");
@@ -72,7 +72,7 @@ angular.module('angularApp')
         }
 
         return gridData;
-    }
+    };
 
     var processData = function( resArr ){
         var stateInfo = resArr[1],
@@ -82,12 +82,12 @@ angular.module('angularApp')
         metadata.stateInfo = stateInfo.data;
 
         return processGridData( resArr[0] );
-    }
+    };
     var getGridData = function getGridData(){
         return $q.all( [fetchGridData(), fetchStateInfo(), fetchOwnerInfo()] ).then( processData, function(){
             console.log("error while fetching data");
         });
-    }
+    };
 
     return {
         getData: getGridData

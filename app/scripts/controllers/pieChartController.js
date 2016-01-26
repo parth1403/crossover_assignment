@@ -1,15 +1,16 @@
 angular.module('angularApp').controller('PieChartCtrl',
-  ['$scope', '$http', '$log', 'GridDataService',
-  function ($scope, $http, $log, GridDataService) {
+  ['$scope',
+  function ($scope) {
+    'use strict';
 
     $scope.init = function init( rowData, facet ){
       renderChart( rowData, facet, $scope);
-    }
+    };
 
 
     function renderChart( chartData, facet, scope ){
-      var succeed = chartData.details_data[facet].succeed
-        ,failed   = chartData.details_data[facet].total - succeed
+      var succeed = chartData.details_data[facet].succeed,
+        failed   = chartData.details_data[facet].total - succeed
         ;
 
       scope.options = {

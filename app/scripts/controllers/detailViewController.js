@@ -1,7 +1,7 @@
 angular.module('angularApp').controller('DetailViewCtrl',
   ['$scope', '$uibModalInstance', 'data',
 function ($scope, $uibModalInstance, data) {
-
+  'use strict';
 
 
   $scope.data = data;

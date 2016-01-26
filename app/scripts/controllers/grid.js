@@ -41,14 +41,14 @@ angular.module('angularApp').controller('GridCtrl',
         }
       },
       rowTemplate: "<div ng-click=\"grid.appScope.onClick(grid, row)\" ng-repeat=\"(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name\" class=\"ui-grid-cell\" ng-class=\"[{ 'ui-grid-row-header-cell': col.isRowHeader, 'row-expanded': row.isExpanded }, row.entity.stateInfo.type]\" ui-grid-cell ></div></div>"
-    }
+    };
 
     $scope.$on('metrics_box_clicked', function(e) {
       e.stopPropagation();
 
       var row = e.targetScope.row;
 
-      var modalInstance = $uibModal.open({
+      $uibModal.open({
         animation: true,
         templateUrl: 'views/detailsviewmodaltmpl.html',
         controller: 'DetailViewCtrl',
@@ -57,7 +57,7 @@ angular.module('angularApp').controller('GridCtrl',
             return {
               box: 'Metrics',
               row: row
-            }
+            };
           }
         }
       });
@@ -69,7 +69,7 @@ angular.module('angularApp').controller('GridCtrl',
 
       var row = e.targetScope.row;
 
-      var modalInstance = $uibModal.open({
+      $uibModal.open({
         animation: true,
         templateUrl: 'views/detailsviewmodaltmpl.html',
         controller: 'DetailViewCtrl',
@@ -78,7 +78,7 @@ angular.module('angularApp').controller('GridCtrl',
             return {
               box: 'Build',
               row: row
-            }
+            };
           }
         }
       });
@@ -89,7 +89,7 @@ angular.module('angularApp').controller('GridCtrl',
 
       var row = e.targetScope.row;
 
-      var modalInstance = $uibModal.open({
+      $uibModal.open({
         animation: true,
         templateUrl: 'views/detailsviewmodaltmpl.html',
         controller: 'DetailViewCtrl',
@@ -98,7 +98,7 @@ angular.module('angularApp').controller('GridCtrl',
             return {
               box: 'Unit Test',
               row: row
-            }
+            };
           }
         }
       });
@@ -108,7 +108,7 @@ angular.module('angularApp').controller('GridCtrl',
 
       var row = e.targetScope.row;
 
-      var modalInstance = $uibModal.open({
+      $uibModal.open({
         animation: true,
         templateUrl: 'views/detailsviewmodaltmpl.html',
         controller: 'DetailViewCtrl',
@@ -117,7 +117,7 @@ angular.module('angularApp').controller('GridCtrl',
             return {
               box: 'Functional Test',
               row: row
-            }
+            };
           }
         }
       });
