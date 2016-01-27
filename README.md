@@ -8,7 +8,8 @@ version 0.15.1.
 1. install node.js - https://nodejs.org/en/download/
 2. install yeoman - http://yeoman.io/codelab/setup.html
 3. install git - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-4. clone git repository https://github.com/parth1403/crossover_assignment.git
+4. install compass - http://compass-style.org/install/
+5. clone git repository https://github.com/parth1403/crossover_assignment.git
     OR
    - extract uploaded zip.
    - copy assignment folder to any directory
