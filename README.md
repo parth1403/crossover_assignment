@@ -16,9 +16,13 @@ version 0.15.1.
 
 ## Build & development
 1. go to application directory via terminal or command prompt.
-2. run "npm install"
-3. run "bower install"
-4. run "grunt serve" for application preview
+2. run "npm cache clean"
+3. run "npm install phantomjs"
+4. run "npm install karma"
+5. run "npm install jasmine-core"
+6. run "npm install"
+7. run "bower install"
+8. run "grunt serve" for application preview
    OR
    run "grunt serve:dist" for application distribution package creation.
 
