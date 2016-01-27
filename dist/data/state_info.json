@@ -1,0 +1,47 @@
+{
+  "1": {
+    "type": "pending",
+    "title": "Pending",
+    "state_indicators": {
+      "font_color": "grey",
+      "border_color": "grey",
+      "icon_type": "grey"
+    }
+  },
+  "2": {
+    "type": "running",
+    "title": "Running",
+    "state_indicators": {
+      "font_color": "blue",
+      "border_color": "blue",
+      "icon_type": "blue"
+    }
+  },
+  "3": {
+    "type": "rejected",
+    "title": "Rejected",
+    "state_indicators": {
+      "font_color": "red",
+      "border_color": "red",
+      "icon_type": "red"
+    }
+  },
+  "4": {
+    "type": "complete",
+    "title": "Complete",
+    "state_indicators": {
+      "font_color": "green",
+      "border_color": "green",
+      "icon_type": "green"
+    }
+  },
+  "5": {
+    "type": "accepted",
+    "title": "Accepted",
+    "state_indicators": {
+      "font_color": "green",
+      "border_color": "green",
+      "icon_type": "green"
+    }
+  }
+}

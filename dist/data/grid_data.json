@@ -1,0 +1,236 @@
+[
+  {
+    "req_id": 1,
+    "req_name": "Tenrox-R1_1235",
+    "req_by": null,
+    "req_type": "build",
+    "state_id": 1,
+    "time_started": "",
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "pending"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "pending",
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": 53,
+        "progress": 40,
+        "security_count": 64,
+        "status": "pending",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "pending",
+        "succeed": 142,
+        "total": 152
+      }
+    },
+    "result": {
+    }
+  },
+  {
+    "req_id": 2,
+    "req_name": "432462",
+    "req_by": 1,
+    "req_type": "firewall",
+    "state_id": 2,
+    "time_started": 1452611186018,
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "pending"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "pending",
+        "progress": 30,
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": 53,
+        "progress": 65,
+        "security_count": 64,
+        "status": "running",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "pending",
+        "succeed": 142,
+        "total": 152
+      }
+    }
+  },
+  {
+    "req_id": 3,
+    "req_name": "432461",
+    "req_by": 2,
+    "req_type": "firewall",
+    "state_id": 3,
+    "time_started": 1452611186018,
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "completed"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "completed",
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": -53,
+        "progress": 0,
+        "security_count": 64,
+        "status": "rejected",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "completed",
+        "succeed": 142,
+        "total": 152
+      }
+    },
+    "result": {
+      "cta_type": 2,
+      "status": "metrics_reduction"
+    }
+  },
+  {
+    "req_id": 4,
+    "req_name": "Tenrox-R1_1234",
+    "req_by": null,
+    "req_type": "build",
+    "state_id": 4,
+    "time_started": 1452611186018,
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "completed"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "completed",
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": 53,
+        "progress": 40,
+        "security_count": 64,
+        "status": "completed",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "completed",
+        "succeed": 142,
+        "total": 152
+      }
+    },
+    "result":{
+      "cta_type": 3
+    }
+  },
+  {
+    "req_id": 5,
+    "req_name": "432460",
+    "req_by": 1,
+    "req_type": "firewall",
+    "state_id": 3,
+    "time_started": 1452611186018,
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "pending"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "pending",
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": -53,
+        "progress": 70,
+        "security_count": 64,
+        "status": "rejected",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "pending",
+        "succeed": 142,
+        "total": 152
+      }
+    },
+    "result": {
+      "cta_type": 2,
+      "status": "metrics_reduction"
+    }
+  },
+  {
+    "req_id": 6,
+    "req_name": "432459",
+    "req_by": 2,
+    "req_type": "firewall",
+    "state_id": 5,
+    "time_started": 1452611186018,
+    "details_data": {
+      "build": {
+        "start_time": 1452611186018,
+        "status": "completed"
+      },
+      "functional_test": {
+        "test_passed": 68,
+        "code_covered": 23,
+        "status": "completed",
+        "succeed": 4321,
+        "total": 6466
+      },
+      "metrics": {
+        "maintainability_count": 53,
+        "progress": 0,
+        "security_count": 64,
+        "status": "completed",
+        "test_count": 64,
+        "workmanship_count": 72
+      },
+      "unit_test": {
+        "test_passed": 73,
+        "code_covered": 76,
+        "status": "completed",
+        "succeed": 142,
+        "total": 152
+      }
+    },
+    "result": {
+      "cta_type": 1,
+      "status": "auto_merged"
+    }
+  }
+]
